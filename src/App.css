@@ -1,0 +1,47 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: olive;
+}
+
+a {
+  margin: 20px;
+  display: block;
+  font-size: 1.2 rem;
+  color: rgb(255, 0, 170);
+}
+button {
+  margin: 20px;
+}
+nav {
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  align-items: 10vh;
+  min-height: 10vh;
+}
+.error-test {
+  display: flexbox;
+  justify-content: center;
+}
+.counter {
+  margin: 20px o;
+  display: flex;
+  align-items: column;
+  justify-content: center;
+  display: flex;
+}
+
+.counter input {
+  padding: 15px;
+}
+button {
+  margin: 20px;
+}
+
+.text-count {
+  text-align: center;
+  font-size: 70px;
+}
