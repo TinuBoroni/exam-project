@@ -11,14 +11,19 @@ import useCounter from "./component/useCounter";
 const App = () => {
   return (
     <div className="App">
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/counter">Counter</NavLink>
-        <NavLink to="/usereducer">usereducer</NavLink>
-        <NavLink to="/useCounter">useCounter</NavLink>
-        <NavLink to="/error">Error</NavLink>
-      </nav>
+      <div className="nav-link">
+        <nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/counter">Counter</NavLink>
+          <NavLink to="/usereducer">usereducer</NavLink>
+          <NavLink to="/useCounter">useCounter</NavLink>
+          <NavLink to="/error">Error</NavLink>
+        </nav>
+      </div>
       <counter value={0} />
+      <useCounter />
+      <usereducer />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Counter" element={<Counter />} />

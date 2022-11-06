@@ -23,7 +23,7 @@ function counter() {
     const [count, increment, decrement, reset] = useCounter(0);
     
     return (
-        <div className="counter">
+        <div className="counter-user">
         <h1>{count}</h1>
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
