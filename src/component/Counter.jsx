@@ -1,38 +1,37 @@
-import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import useCounter from "./hooks/useCounter";
+
 
 const Counter = () => {
-  let [value, setValue] = useState(0);
-
-  const handleIncrement = () => {
-    setValue(value + 1);
-  };
-
-  const handleDecrement = () => {
-    setValue(value - 1);
-  };
-
-  const handleReset = () => {
-    setValue(0);
-  };
-
+  const {state,increment,decrement,reset,setValue} = useCounter()
+  
   return (
     <div>
-      <h1>{value}</h1>
+
+        <Helmet> 
+        <title> My Counter App</title>
+        <meta 
+        name="description"
+        content="Hello welcome to my counter App"/>
+      <link rel="canonical" href="/Counter" />
+      </Helmet> 
+      <h1>{state.count}</h1>
       <div className="Counter">
-        <input type="text" placeholder="Set Value"  onClick = {handleIncrement}  />
+      <input type='number' name='setValue' onChange={(e) => setValue(e)} />
         <br />
 
-      <button className="btn btn-primary mx-2" onClick={handleIncrement}>
+      <button className="btn btn-primary mx-2" onClick={increment}>
         Increment
       </button>
 
-      <button className="btn btn-primary mx-2" onClick={handleDecrement}>
+      <button className="btn btn-primary mx-2" onClick={decrement}>
         Decrement
       </button>
 
-      <button className="btn btn-primary mx-2" onClick={handleReset}>
+      <button className="btn btn-primary mx-2" onClick={reset}>
         Reset
       </button>
+
     </div>
     </div>
   );

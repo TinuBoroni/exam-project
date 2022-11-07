@@ -2,16 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ErrorBoundary } from "react-error-boundary";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
+import App from "./App";
+import Fallback from "./component/Fallback";
+
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <HelmetProvider>
     <BrowserRouter>
-      <ErrorBoundary>
+      <ErrorBoundary fallback={<Fallback />}>
         <App />
       </ErrorBoundary>
     </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );
